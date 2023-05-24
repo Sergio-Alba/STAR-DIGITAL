@@ -1,0 +1,24 @@
+.footer{
+    background-color: #bababa;
+    border-top:1px #000 solid ;
+    .footer__div{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        .footer__section--h3{
+            padding: 1.5vw;
+        }
+        .footer__section--list{
+            list-style: none;
+            .footer__section--item{
+                text-decoration: none;
+                color:#000;
+                padding: 5% 1.5vw;
+            }
+        }
+    }
+    .footer__p--derechos{
+        margin: auto;
+    }
+}
+    
