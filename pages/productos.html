@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- LIBRERIA DE JS LINK DE CSS SWEET ALERT2 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.11/dist/sweetalert2.min.css">
+
+
+    <link rel="shortcut icon" href="../assets/img/logo lobo.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+    <title>STAR DIGITAL</title>
+</head>
+<body>
+    <div class="grid-layout">
+        <header class="header">
+            <div class="header__div--logo">
+                <a href="../index.html">
+                    <img src="../assets/img/logo lobo.png" width="100" alt="logo de un lobo de digital " class="header__div--img--logo">
+                </a>
+                <button class="abrir--nav" id="abrirNav"><i class="bi bi-list"></i></button>
+            </div>
+            <nav class="nav" id="nav">
+                <button class="cerrar--nav" id="cerrarNav"><i class="bi bi-x-lg"></i></button>
+                <ul >
+                    <li class="nav--list">
+                        <a href="../index.html" class="nav__list--item ">Inicio</a>
+                        <a href="#" class="nav__list--item active">Productos</a>
+                        <a href="./novedades.html" class="nav__list--item">Novedades</a>
+                        <a href="./suscribirse.html" class="nav__list--item">Suscribirse</a>
+                    </li>
+                </ul>
+            </nav>
+            <section class="header__section">
+                <div class="header__section--search">
+                    <input id="buscador" type="search" placeholder="Buscar..."><button type="button" class="button--search" id="buscar"><i class="bi bi-search"></i></button>
+                </div>
+                <ul>
+                    <li class="header__section--list">
+                        <a href="./suscribirse.html" class="section__list--item user"><i class="bi bi-person-circle"></i></a>
+                        <a href="" class="section__list--item fav"><i class="bi bi-heart"></i></a>
+                        <a id="verCarrito" class="section__list--item  card active"><i class="bi bi-cart4"></i></a>
+                    </li>
+                </ul>
+                
+            </section>
+
+        <!--** AQUI VA EL MODAL DONDE SE MUESTRAN LOS PRODUCTOS SECIONADOS -->
+            <div class="modal__container  " id="modalContainer">
+            </div>
+
+
+        </header>
+        <main class="main main--productos">
+            <!--** menu de productos  -->
+            <button  id="abrirMenu "  class="abrir--menu--section abrir--menu"><i class="bi bi-list"></i>PRODUCTOS</button>
+            <section id="menu " class="menu--contenedor ">
+                <!-- <button  id="cerrarMenu " class="cerrar--menu abrir--menu"><i class="bi bi-x-lg"></i></button> -->
+                <ul id="menu" class="menu__productos">
+                    <li class="list--item abrir--menu">
+                        <h4  class="list--producto">TODOS<i class="bi bi-caret-right"></i></h4>
+                        <div class="list__item--filter">
+                            <ul class="ul__items">
+                                <h5 class="button--filter">FILTRAR POR </h5>
+                                <li class="list__item--secundario">
+                                    <label for="precio">OFERTA</label>
+                                    <input type="checkbox" name="precio" id="precio">
+                                </li>
+                                <li class="list__item--secundario">
+                                    <label for="vendidos">MAS VENDIDO</label>
+                                    <input type="checkbox" name="vendidos" id="vendidos">
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="list--item abrir--menu">
+                        <h4  class="list--producto">DRONES  <i class="  bi bi-caret-right"></i></h4>
+                        <div class="list__item--filter  ">
+                            <ul class="ul__items">
+                                <h5 class="button--filter">FILTRAR POR </h5>
+                                <li class="list__item--secundario">
+                                    <label for="todosProducto">TODOS</label>
+                                    <input type="checkbox" name="todosProducto" id="todosProducto">
+                                </li>
+                                <li class="list__item--secundario">
+                                    <label for="precio">OFERTA</label>
+                                    <input type="checkbox" name="precio" id="precio">
+                                </li>
+                                <li class="list__item--secundario">
+                                    <label for="vendidos">MAS VENDIDO</label>
+                                    <input type="checkbox" name="vendidos" id="vendidos">
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="list--item abrir--menu">
+                        <h4  class="list--producto">LAPTOPS <i class="bi bi-caret-right"></i></h4>
+                        <div class="list__item--filter">
+                            <ul class="ul__items">
+                                <h5 class="button--filter">FILTRAR POR </h5>
+                                <li class="list__item--secundario">
+                                    <label for="todosProducto">TODOS</label>
+                                    <input type="checkbox" name="todosProducto" id="todosProducto">
+                                </li>
+                                <li class="list__item--secundario">
+                                    <label for="precio">OFERTA</label>
+                                    <input type="checkbox" name="precio" id="precio">
+                                </li>
+                                <li class="list__item--secundario">
+                                    <label for="vendidos">MAS VENDIDO</label>
+                                    <input type="checkbox" name="vendidos" id="vendidos">
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="list--item abrir--menu">
+                        <h4  class="list--producto">TABLETS<i class="bi bi-caret-right"></i></h4>
+                        <div class="list__item--filter">
+                            <ul class="ul__items">
+                                <h5 class="button--filter">FILTRAR POR </h5>
+                                <li class="list__item--secundario">
+                                    <label for="todosProducto">TODOS</label>
+                                    <input type="checkbox" name="todosProducto" id="todosProducto">
+                                </li>
+                                <li class="list__item--secundario">
+                                    <label for="precio">OFERTA</label>
+                                    <input type="checkbox" name="precio" id="precio">
+                                </li>
+                                <li class="list__item--secundario">
+                                    <label for="vendidos">MAS VENDIDO</label>
+                                    <input type="checkbox" name="vendidos" id="vendidos">
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="list--item abrir--menu">
+                        <h4  class="list--producto">AUDIO<i class="bi bi-caret-right"></i></h4>
+                        <div class="list__item--filter">
+                            <ul class="ul__items">
+                                <h5 class="button--filter">FILTRAR POR </h5>
+                                <li class="list__item--secundario">
+                                    <label for="todosProducto">TODOS</label>
+                                    <input type="checkbox" name="todosProducto" id="todosProducto">
+                                </li>
+                                <li class="list__item--secundario">
+                                    <label for="precio">OFERTA</label>
+                                    <input type="checkbox" name="precio" id="precio">
+                                </li>
+                                <li class="list__item--secundario">
+                                    <label for="vendidos">MAS VENDIDO</label>
+                                    <input type="checkbox" name="vendidos" id="vendidos">
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="list--item abrir--menu">
+                        <h4  class="list--producto">CELULARES<i class="bi bi-caret-right"></i></h4>
+                        <div class="list__item--filter">
+                            <ul class="ul__items">
+                                <h5 class="button--filter">FILTRAR POR </h5>
+                                <li class="list__item--secundario">
+                                    <label for="todosProducto">TODOS</label>
+                                    <input type="checkbox" name="todosProducto" id="todosProducto">
+                                </li>
+                                <li class="list__item--secundario">
+                                    <label for="precio">OFERTA</label>
+                                    <input type="checkbox" name="precio" id="precio">
+                                </li>
+                                <li class="list__item--secundario">
+                                    <label for="vendidos">MAS VENDIDO</label>
+                                    <input type="checkbox" name="vendidos" id="vendidos">
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="list--item abrir--menu">
+                        <h4  class="list--producto">TV<i class="bi bi-caret-right"></i></h4>
+                        <div class="list__item--filter">
+                            <ul class="ul__items">
+                                <h5 class="button--filter">FILTRAR POR </h5>
+                                <li class="list__item--secundario">
+                                    <label for="todosProducto">TODOS</label>
+                                    <input type="checkbox" name="todosProducto" id="todosProducto">
+                                </li>
+                                <li class="list__item--secundario">
+                                    <label for="precio">OFERTA</label>
+                                    <input type="checkbox" name="precio" id="precio">
+                                </li>
+                                <li class="list__item--secundario">
+                                    <label for="vendidos">MAS VENDIDO</label>
+                                    <input type="checkbox" name="vendidos" id="vendidos">
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    
+                </ul>
+            </section>
+            <section id="contenedorProductos" class="main__section--5">
+            </section> 
+            <section class="section2" id="section2">
+
+            </section>
+        </main>
+        <footer class="footer">
+            <div class="footer__div">
+                <section class="footer__section">
+                    <h3 class="footer__section--h3">
+                        Nuestra Ubicación
+                    </h3>
+                    <ul>
+                        <li class="footer__section--list"><a href="" class="footer__section--item">Av. Cielo lindo N-5001</a></li>
+                        <li class="footer__section--list"><a href="" class="footer__section--item">starDigial@gmail.com</a></li>
+                        <li class="footer__section--list"><a href="" class="footer__section--item">+11165523</a></li>
+                    </ul>
+                </section>
+                <section class="footer__section">
+                    <h3 class="footer__section--h3">
+                        Tienda
+                    </h3>
+                    <ul>
+                        <li class="footer__section--list"><a href="" class="footer__section--item">Auriculares</a></li>
+                        <li class="footer__section--list"><a href="" class="footer__section--item">Tablets</a></li>
+                        <li class="footer__section--list"><a href="" class="footer__section--item">Celulares</a></li>
+                        <li class="footer__section--list"><a href="" class="footer__section--item">portatiles</a></li>
+                        <li class="footer__section--list"><a href="" class="footer__section--item">Ofertas</a></li>
+                    </ul>
+                </section>
+                <section class="footer__section">
+                    <h3 class="footer__section--h3">
+                        Atencion al cliente
+                    </h3>
+                    <ul>
+                        <li class="footer__section--list"><a href="" class="footer__section--item">Contactanos</a></li>
+                        <li class="footer__section--list"><a href="" class="footer__section--item">reportar un problema</a></li>
+                    </ul>
+                </section>
+                <section class="footer__section">
+                    <h3 class="footer__section--h3">
+                        Nuestras Redes
+                    </h3>
+                    <ul>
+                        <li class="footer__section--list">
+                            <a href="" class="footer__section--item"><i class="bi bi-facebook"></i>Facebook</a>
+                        </li>
+                        <li class="footer__section--list">
+                            <a href="" class="footer__section--item"><i class="bi bi-instagram"></i>Instagram</a>
+                        </li>
+                        <li class="footer__section--list">
+                            <a href="" class="footer__section--item"><i class="bi bi-youtube"></i>Youtube</a>
+                        </li>
+                        <li class="footer__section--list">
+                            <a href="" class="footer__section--item"><i class="bi bi-tiktok"></i>Tiktok</a>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+            <small class="footer__p--derechos">
+                &copy: 2023 @SergioAlba.
+            </small>
+        </footer>
+    </div>
+    <!-- LIBRERIA DE JS -JAVASCRIPT MINIFICADO -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.11/dist/sweetalert2.all.min.js"></script>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
+
+
+

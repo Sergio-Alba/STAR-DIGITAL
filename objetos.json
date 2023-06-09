@@ -1,41 +1,7 @@
-
-// ** botones  navegacion abrir y cerrar menu
-const nav = document.querySelector("#nav");
-const abrir = document.querySelector("#abrirNav");
-const cerrar = document.querySelector("#cerrarNav");
-abrir.addEventListener("click", () => (
-    nav.classList.add("visible")
-));
-cerrar.addEventListener("click", () => (
-    nav.classList.remove("visible")
-));
-
-//** BOTON DEL MENU DE PRODUCTOS  */
-let listElementos = document.querySelectorAll(".abrir--menu");
-listElementos.forEach(listElement =>{
-    listElement.addEventListener("click", ()=>{
-        listElement.classList.toggle("arrow");
-    })
-})
-
-//**BOTON DE FORMULARIO */
-
-    
-
-
-// ** MOSTRAAR CARRITO
-const verCarrito = document.querySelector("#verCarrito");
-const modalContainer = document.querySelector("#modalContainer");
-const x = document.querySelector("#x");
-
-//** CONTENEDOR DE PRODUCTOS  */
-const contenedorProd= document.getElementById("contenedorProductos");
-const sections = document.querySelector('#section2')
-//** PRODUCTOS */
-const stockProductos= [
+[
     {
         "id":"01",
-        "img" : "../assets/img/Infinix-NOTE-30-Pro.jpg",
+        "img" : "./img/Infinix-NOTE-30-Pro.jpg",
         "nombre": "infinix note 30pro",
         "precio": 329 ,
         "descripcion":{
@@ -51,7 +17,7 @@ const stockProductos= [
     },
     {
         "id":"01",
-        "img" : "../assets/img/Galaxy S23 Ultra.jpg ",
+        "img" : "./img/Galaxy S23 Ultra.jpg ",
         "nombre": "Galaxy S23 Ultra",
         "precio": 1.511 ,
         "descripcion":{
@@ -67,7 +33,7 @@ const stockProductos= [
     },
     {
         "id":"01",
-        "img" : "../assets/img/Xiaomi 13 Pro.jpg ",
+        "img" : "./img/Xiaomi 13 Pro.jpg ",
         "nombre": "Xiaomi 13 Pro",
         "precio": 1.500 ,
         "descripcion":{
@@ -83,7 +49,7 @@ const stockProductos= [
     },
     {
         "id":"01",
-        "img" : "../assets/img/Oneplus 10T.jpg ",
+        "img" : "./img/Oneplus 10T.jpg ",
         "nombre": "Oneplus 10T",
         "precio": 492 ,
         "descripcion":{
@@ -99,7 +65,7 @@ const stockProductos= [
     },
     {
         "id":"01",
-        "img" : "../assets/img/Realme GT Neo 3.jpg",
+        "img" : "./img/Realme GT Neo 3.jpg",
         "nombre": "Realme GT Neo 3",
         "precio": 642 ,
         "descripcion":{
@@ -115,7 +81,7 @@ const stockProductos= [
     },
     {
         "id":"02",
-        "img" : "../assets/img/Xiaomi Redmi Note 11.jpg",
+        "img" : "./img/Xiaomi Redmi Note 11.jpg",
         "nombre": "Xiaomi Redmi Note 11",
         "precio": 179 ,
         "descripcion":{
@@ -131,7 +97,7 @@ const stockProductos= [
     },
     {
         "id":"02",
-        "img" : "../assets/img/Samsung Galaxy A52.jpg",
+        "img" : "./img/Samsung Galaxy A52.jpg",
         "nombre": "Samsung Galaxy A52",
         "precio": 374 ,
         "descripcion":{
@@ -147,7 +113,7 @@ const stockProductos= [
     },
     {
         "id":"02",
-        "img" : "../assets/img/Xiaomi Poco X5 Pro.jpg",
+        "img" : "./img/Xiaomi Poco X5 Pro.jpg",
         "nombre": "Xiaomi Poco X5 Pro",
         "precio": 696  ,
         "descripcion":{
@@ -163,7 +129,7 @@ const stockProductos= [
     },
     {
         "id":"02",
-        "img" : "../assets/img/Motoro Edge 30.jpg",
+        "img" : "./img/Motorola Edge 30.jpg",
         "nombre": "Motorola Edge 30",
         "precio": 865 ,
         "descripcion":{
@@ -179,9 +145,9 @@ const stockProductos= [
     },
     {
         "id":"02",
-        "img" : "../assets/img/Realme 10.jpg",
+        "img" : "./img/Realme 10.jpg",
         "nombre": "Realme 10",
-        "precio":  340,
+        "precio":  0,
         "descripcion":{
             "memoria": "256 Gb",
             "ram": "8 Gb",
@@ -195,9 +161,9 @@ const stockProductos= [
     },
     {
         "id":"03",
-        "img" : "../assets/img/redmi 9.jpg",
+        "img" : "./img/",
         "nombre": "Redmi 9",
-        "precio":  320,
+        "precio":  0,
         "descripcion":{
             "memoria": "32 Gb",
             "ram": "2 Gb",
@@ -211,9 +177,9 @@ const stockProductos= [
     },
     {
         "id":"03 ",
-        "img" : "../assets/img/redmi a1.webp",
+        "img" : "./img/",
         "nombre": "Redmi A1 ",
-        "precio": 270,
+        "precio": 0,
         "descripcion":{
             "memoria": "32 Gb",
             "ram": "2 Gb",
@@ -227,9 +193,9 @@ const stockProductos= [
     },
     {
         "id":"03",
-        "img" : "../assets/img/Note 8P.png",
+        "img" : "./img/",
         "nombre": "Note 8P",
-        "precio": 250 ,
+        "precio": 0 ,
         "descripcion":{
             "memoria": "16 Gb",
             "ram": "2 Gb",
@@ -243,9 +209,9 @@ const stockProductos= [
     },
     {
         "id":"03",
-        "img" : "../assets/img/samsung galaxy a10.jpg",
+        "img" : "./img/",
         "nombre": "Samsung Galaxy A10",
-        "precio": 210 ,
+        "precio": 0 ,
         "descripcion":{
             "memoria": "32 Gb",
             "ram": "2 Gb",
@@ -257,102 +223,5 @@ const stockProductos= [
             "carga rapida": "25w"
         }
     }
-];
 
-//** CONSUMIENDO UNA API CON FETCH */
-fetch("https://pokeapi.co/api/v2/ability/battle-armor")
-    .then((res)=> res.json())
-    .then((data)=>{
-        const pokemons = data.results;
-        pokemons.forEach((pokemon)=>{
-            const section = document.createElement('section')
-            contenedor.className = "section__div--carts"
-            contenedor.innerHTML = `<img class="div__img--carts" src="${pokemon.img} " width="300" alt="samsung-galaxy-z-flip">
-                                    <h4 class="div__h4--nombre--producto">${pokemon.nombre}</h3>
-                                    <p class="div__p--descripcion--producto">${pokemon.descripcion}</p>`
-        sections.appendChild(sections);
-        })
-    });
-
-//** CARRITO  */
-let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-
-//** RECORRIENDO LOS PRODUCTOS  */
-stockProductos.forEach((producto)=>{
-    let contenedor = document.createElement("div");
-    contenedor.className = "section__div--carts"
-    contenedor.innerHTML = `<img class="div__img--carts" src="${producto.img} " width="300" alt="samsung-galaxy-z-flip">
-                            <h4 class="div__h4--nombre--producto">${producto.nombre}</h3>
-                            <p class="div__p--descripcion--producto">${producto.precio} $</p>
-                            `;
-
-    contenedorProd.append(contenedor);
-
-//**BOTON PARA AÑADIR AL CARRTO */
-    let comprar = document.createElement("button");
-    comprar.className = "button__shop--plus"
-    comprar.innerHTML = `
-    <i class="bi bi-cart-plus"></i>
-    `;
-    contenedor.append(comprar);
-
-    comprar.addEventListener("click", () => {
-        carrito.push({
-            id: producto.id,
-            img:producto.img,
-            nombre:producto.nombre,
-            precio: producto.precio,
-        });
-        console.log(carrito);
-    });
-});
-
-//** CONTENEDOR DEL CARRITO  */
-verCarrito.addEventListener("click", ()=>{
-    modalContainer.innerHTML = ``
-    modalContainer.style.display="flex";
-    const modalHeader = document.createElement("div");
-    modalContainer.className = "informacion--compra"
-    modalContainer.innerHTML = `<h3>Carrito</h3>`;
-    modalContainer.append(modalHeader);
-    const modalbutton = document.createElement("button");
-    modalbutton.innerText = "X";
-    modalbutton.className = "button"
-    modalbutton.addEventListener("click", ()=>{
-        modalContainer.style.display="none";
-    })
-    modalHeader.append(modalbutton);
-
-//** MOSTRAMOS LOS PRODUCTOS QUE ESTAN EN EL CARRITO DE COMPRAS */
-    carrito.forEach((producto) =>{
-        let carritoContent = document.createElement("div")
-        carritoContent.className = "modal__content"
-        carritoContent.innerHTML =
-                        `<img class="img--cart" src="${producto.img}" width="100"">
-                        <h4 class="h4--cart">${producto.nombre}</h3>
-                        <p class="p--cart">${producto.precio} $</p>`
-        modalContainer.append(carritoContent);
-        saveLocal();
-    });
-
-//** FUNCION PARA SUMAR LOS ARTICULOS DE EL CARRITO DE COMPRAS */
-    const total = carrito.reduce((acc, prod) => acc + prod.precio, 0);
-
-//** CREAMOS UN  CONTENEDOR PARA MOSTRAR LA SUMA DE LOS PRODUCTOS */
-    const totalBuying = document.createElement("div");
-        totalBuying.className = "total--content";
-        totalBuying.innerHTML = `total a pagar: ${total}$`
-        modalContainer.append(totalBuying);
-});
-
-//**GUARDAMOS EN EL ALMACENAMIENTO LOCAL LOS PRODUCTOS DEL CARRITO */
-const saveLocal = ()=>{
-    localStorage.setItem("carrito", JSON.stringify(carrito));
-};
-
-
-
-
-
-
-
+]

@@ -1,15 +1,20 @@
+@import "variables";
+
 .footer{
-    background-color: #bababa;
+    display: flex;
+    flex-direction: column;
+    background-color: $color-footer;
     border-top:1px #000 solid ;
     .footer__div{
         display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
+        flex-direction: column;
+        margin:2rem 0 0 2rem;
         .footer__section--h3{
             padding: 1.5vw;
         }
         .footer__section--list{
             list-style: none;
+            margin-left: 1rem;
             .footer__section--item{
                 text-decoration: none;
                 color:#000;
@@ -18,7 +23,33 @@
         }
     }
     .footer__p--derechos{
-        margin: auto;
+        width: 100vw;
+        margin: 2rem 0;
+        text-align: center;
     }
 }
-    
+@media screen and (min-width:1028px){
+    .footer{
+        .footer__div{
+            width: 80%;
+            flex-direction: row;
+            justify-content: space-around;
+            margin:1rem auto;
+            .footer__section--h3{
+                font-size: 1.7rem;
+            }
+            .footer__section--list{
+                margin: 1rem;
+                .footer__section--item{
+                    font-size: 1.2rem;
+                    i {
+                        margin: 0 1rem;
+                    }
+                }
+            }
+        }
+        .footer__p--derechos{
+            margin-bottom: 2rem ;
+        }
+    }
+}

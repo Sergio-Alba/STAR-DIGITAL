@@ -1,9 +1,261 @@
+
+@import "variables";
+
+
 .header{
-    display:flex;
-    justify-content: center;
     .header__div--logo{
+        display: flex;
+        justify-content: space-between;
         .header__div--img--logo{
-            margin: 1rem 0 .5rem ;
+            width: 30%;
+            margin: 15px  
+        }
+        .abrir--nav{
+            width: 10%;
+            margin: 25px;
+            padding: .5rem 0;
+            font-size: xx-large;
+            background-color: $color-fondo;
+        }
+    }
+    .nav{
+        opacity: 0;
+        visibility: hidden;
+        display: flex;
+        flex-direction: column;
+        background-color: $color-nav-blur;
+        backdrop-filter: blur(5px);
+        width: 60%;
+        height: 60vh;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 100;
+        .cerrar--nav{
+            background-color: #ffffff00;
+            backdrop-filter: blur(5px);
+            display: flex;
+            justify-content: end;
+            margin: 2.2rem  1.5rem  ;
+            font-size: xx-large;
+        }
+        .nav--list{
+            display: flex;
+            flex-direction: column;
+            .nav__list--item{
+                margin: .5rem 0 0 2rem ;
+                width: 60%;
+                padding: 10px;
+                text-decoration: none;
+                font-size: 1.5rem;
+                &:hover{
+                    background-color: $color-card1;
+                    border-radius: 5px ;
+                }
+            }
+        }
+    }
+    .nav.visible{
+        visibility: visible;
+        opacity: 1;
+    }
+    .header__section{
+        background-color: $color-card1;
+        padding:  .5rem;
+        display: flex;
+        flex-wrap: wrap;
+        .header__section--search{
+            width: 60%;
+            input{
+                color: #000;
+                width: 70%;
+                padding: .4rem;
+                border-radius: 50px 0 0 50px;
+            }
+            .button--search{
+                background-color:$color-nav;
+                width: 20%;
+                padding: .4rem;
+                border-radius: 0 50px 50px 0;
+                font-size: medium;
+                &:active{
+                    background-color: #0b4952;
+                }
+            }
+            .button--search > i{
+                &:active{
+                    color: $color-fondo;
+                }
+            }
+        }
+        ul{
+            width: 35%;
+            .header__section--list{
+                display: flex;
+                justify-content:space-around;
+                font-size: x-large;
+                list-style: none;
+                .section__list--item> i  {
+                &:active{
+                    color: $color-fondo;
+                }
+                }
+            }
+        }
+    }
+    #modalContainer {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        backdrop-filter: blur(10px);
+        width: 90%;
+        right: 0;
+        flex-wrap: nowrap;
+        height: 60%;
+        overflow: scroll;
+        h3{
+            height: 15%;
+            font-size: 2rem;
+            margin: 1rem;
+        }
+        button{
+            background-color: $color-nav-blur;
+            position: absolute;
+            right: 1.5rem;
+            top: 1rem;
+            font-size: 2rem;
+        }
+        .modal__content{
+            background-color:$color-card1 ;
+            display: flex;
+            margin: 1.3rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            .h4--cart{
+                padding: .3rem;
+            }
+        }
+    }
+}
+@media screen and (min-width:1028px) {
+        
+    .header{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        .header__div--logo{
+            width: 30vw;
+            a{
+                .header__div--img--logo{
+                    margin: 1rem auto 0 ;
+                    width:6rem   ;
+                }
+            }
+            .abrir--nav{
+                display: none;
+            }
+        }
+        .nav{
+            opacity: 1;
+            visibility: visible;
+            position: relative;
+            width: 100%;
+            height: auto;
+            background-color:$color-nav;
+            display: flex;
+            align-items: center;
+            .cerrar--nav{
+                display: none;
+            }
+            .nav--list{
+                width: 80vw;
+                flex-direction: row;
+                justify-content: space-around;
+                .nav__list--item{
+                    width: auto;
+                    margin:0;
+                    padding:.4rem;
+                    text-align: center;
+                }
+            }
+        }
+        .header__section{
+            width: 100%;
+            background-color: $color-card1;
+            padding:  .5rem;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            .header__section--search{
+                width: 50% ;
+                input{
+                    color: #000;
+                    width: 40%;
+                    padding: .4rem;
+                }
+                .button--search{
+                    width: 10%;
+                    &:active{
+                        background-color: #0b4952;
+                    }
+                }
+                .button--search > i{
+                    &:active{
+                        color: $color-fondo;
+                    }
+                }
+            }
+            ul{
+                width: 30%;
+                .header__section--list{
+                    display: flex;
+                    justify-content:space-around;
+                    font-size: x-large;
+                    list-style: none;
+                    .section__list--item> i  {
+                    &:active{
+                        color: $color-fondo;
+                    }
+                    }
+                }
+            }
+        }
+        #modalContainer {
+            position: absolute;
+            width: 30%;
+            right: 0;
+            top: 13rem;
+            flex-wrap: nowrap;
+            height: 60vh;
+            overflow: scroll;
+            h3{
+                height: 15%;
+                font-size: 2rem;
+                margin: 1rem;
+            }
+            button{
+                background-color: $color-nav-blur;
+                position: absolute;
+                right: 1.5rem;
+                top: 1rem;
+                font-size: 2rem;
+            }
+            .modal__content{
+                background-color:$color-card1 ;
+                display: flex;
+                margin: 1.3rem;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+                .h4--cart{
+                    padding: .3rem;
+                }
+            }
         }
     }
 }

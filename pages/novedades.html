@@ -5,14 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="shortcut icon" href="./assets/img/logo lobo.png" type="image/x-icon">
-
+    <link rel="shortcut icon" href="../assets/img/logo lobo.png" type="image/x-icon">
     <!-- LIBRERIA DE JS LINK DE CSS SWEET ALERT2 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.11/dist/sweetalert2.min.css">
 
-    <!-- BOOTSTRAP ICONS -->
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
 
     <title>STAR DIGITAL</title>
 </head>
@@ -20,8 +19,8 @@
     <div class="grid-layout">
         <header class="header">
             <div class="header__div--logo">
-                <a href="#">
-                    <img src="./assets/img/logo lobo.png" width="100" alt="logo de un lobo de digital " class="header__div--img--logo">
+                <a href="../index.html">
+                    <img src="../assets/img/logo lobo.png" width="100" alt="logo de un lobo de digital " class="header__div--img--logo">
                 </a>
                 <button class="abrir--nav" id="abrirNav"><i class="bi bi-list"></i></button>
             </div>
@@ -29,10 +28,10 @@
                 <button class="cerrar--nav" id="cerrarNav"><i class="bi bi-x-lg"></i></button>
                 <ul >
                     <li class="nav--list">
-                        <a href="#" class="nav__list--item active">Inicio</a>
-                        <a href="./pages/productos.html" class="nav__list--item">Productos</a>
-                        <a href="./pages/novedades.html" class="nav__list--item">Novedades</a>
-                        <a href="./pages/suscribirse.html" class="nav__list--item">Suscribirse</a>
+                        <a href="../index.html" class="nav__list--item ">Inicio</a>
+                        <a href="./productos.html" class="nav__list--item ">Productos</a>
+                        <a href="#" class="nav__list--item active">Novedades</a>
+                        <a href="./suscribirse.html" class="nav__list--item">Suscribirse</a>
                     </li>
                 </ul>
             </nav>
@@ -42,7 +41,7 @@
                 </div>
                 <ul>
                     <li class="header__section--list">
-                        <a href="./pages/suscribirse.html" class="section__list--item user"><i class="bi bi-person-circle"></i></a>
+                        <a href="./suscribirse.html" class="section__list--item user"><i class="bi bi-person-circle"></i></a>
                         <a href="" class="section__list--item fav"><i class="bi bi-heart"></i></a>
                         <a id="verCarrito" class="section__list--item  card active"><i class="bi bi-cart4"></i></a>
                     </li>
@@ -56,67 +55,53 @@
 
 
         </header>
-        <main class="main main--index">
-            <section class="main__section--1">
-                <img src="./assets/img/drones.jpg"  alt="" class="main__section1--img">
-                <div class="main__section1--text">
-                    <h1 class="section1__div--h1">STAR <br> DIGITAL</h1>
-                    <P class="section1__div--p">Te ofrese variedad de productos <br> segun tu necesidad</P>
+        <main class="main main--novedades">
+            <!--** menu de novedades  -->
+            <section class="main--section">
+                <h1 class="section__h1--title">Novedades</h1>
+                <div class="main__section--div">
+                    <img class="section__div--img1" src="../assets/img/samsung equipos.jpg" alt="samsung-galaxy-book-2-pro_5" width="400">
+                    <h2 class="section__div--h2">Las ultimas novedades de equipos tecnologicos. <br>
+                        Muy pronto en nuestra tienda. </h2>
                 </div>
-            </section>
-            <section class="main__section--2">
-                <div class="main__section2--div">
-                    <h2 class="section2__div--h2">Contamos con variedad de equipos </h2>
-                    <P class="section2__div--p">De exelente calidad.</P>
-                    <img src="./assets/img/samsung equipos.jpg" alt="" class="section2__div--img">
+                <div class="main__section--div">
+                    <img class="section__div--img1" src="../assets/img/samsung-galaxy-book-2-pro_5.jpg" alt="samsung-galaxy-book-2-pro_5" width="400">
+                    <h2 class="section__div--h2">Samsung galaxy book 2</h2>
+                    <p class="section__div--p">
+                        Pantalla: Pantalla dactil de 15pulgadas Full HD AMOLED<br>
+                        Procesador: Intel Core i7  1260P 12Nucleos <br> 16hilos (hasta 4.7Ghz)
+                    </p>
                 </div>
-            </section>
-            <section class="main__section--3">
-                <img src="./assets/img/audifonos Honor inalanbricos.jpg"  class="main__section3--img" alt="audifonos Honor inalanbricos" >
-            </section>
-            <section class="main__section--4">
-                <article class="main__section4--article">
-                    <div class="article__div">
-                        <div class="div__img">
-                            <img src="assets/img/audifonos honor 2.jpg" alt="audifonos honor 2." class="div__card--img">
-                        </div>
-                        <div class="div__descripcion--card">
-                            <h1 class="div__h1--nombre">Honor aerbuds 2</h1>
-                            <p class="div__p--descripcion">- 32 horas de reproduccion continua. <br> - Cancelaciónde ruido <br> - Protección ip:50</p>
-                        </div>
-                        <a href="#buscador" class="a__button--card" >
-                            <button  type="button" class="button__card">VER</button>
-                        </a>
-                    </div>
-                </article>
-                <article class="main__section4--article">
-                    <div class="article__div">
-                        <div class="div__img">
-                            <img src="assets/img/samsung-galaxy-zflip.jpg" alt="audifonos honor 2." class="div__card--img">
-                        </div>
-                        <div class="div__descripcion--card">
-                            <h1 class="div__h1--nombre">Honor aerbuds 2</h1>
-                            <p class="div__p--descripcion">- 32 horas de reproduccion continua. <br> - Cancelaciónde ruido <br> - Protección ip:50</p>
-                        </div>
-                        <a href="#buscador" class="a__button--card" >
-                            <button  type="button" class="button__card">VER</button>
-                        </a>
-                    </div>
-                </article>
-                <article class="main__section4--article">
-                    <div class="article__div">
-                        <div class="div__img">
-                            <img src="assets/img/audifonos akane lateral.jpg" alt="audifonos honor 2." class="div__card--img">
-                        </div>
-                        <div class="div__descripcion--card">
-                            <h1 class="div__h1--nombre">Honor aerbuds 2</h1>
-                            <p class="div__p--descripcion">- 32 horas de reproduccion continua. <br> - Cancelaciónde ruido <br> - Protección ip:50</p>
-                        </div>
-                        <a href="#buscador" class="a__button--card" >
-                            <button  type="button" class="button__card">VER</button>
-                        </a>
-                    </div>
-                </article>
+                <div class="main__section--div">
+                    <img class="section__div--img1" src="../assets/img/ZenBook-Duo-1.jpg" alt="ZenBook-Duo-1" width="300">
+                    <h2 class="section__div--h2">Asus ZenBook Duo 15</h2>
+                    <p class="section__div--p">
+                        Pantalla: Pantalla dactil de 15pulgadas Full HD AMOLED<br>
+                        Procesador: Intel Core i7  1260P 12Nucleos <br> 16hilos (hasta 4.7Ghz)
+                    </p>
+                </div>
+                <div class="main__section--div">
+                    <img class="section__div--img1" src="../assets/img/DJI Mini SE 2.jpg" alt="DJI Mini SE 2" width="300">
+                    <h2 class="section__div--h2">DJI Mini SE 2</h2>
+                    <p class="section__div--p">
+                        3 Batetias cada una dura media hora <br>
+                    Puede alejarse hasta 10km <br>
+                    Calidad 4k <br>
+                    Altura maxima 4000m <br>
+                    6 helices de repuesto 
+                    </p>
+                </div>
+                <div class="main__section--div">
+                    <img class="section__div--img1" src="../assets/img/DJI.jpg" alt="DJI" width="300">
+                    <h2 class="section__div--h2">DJI 3pro</h2>
+                    <p class="section__div--p">
+                        6 Batetias cada una dura 1hora <br>
+                    Puede alejarse hasta 12km <br>
+                    Calidad 4k <br>
+                    Altura maxima 4000m <br>
+                    10 helices de repuesto 
+                    </p>
+                </div>
             </section>
         </main>
         <footer class="footer">
@@ -180,10 +165,6 @@
     <!-- LIBRERIA DE JS -JAVASCRIPT MINIFICADO -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.11/dist/sweetalert2.all.min.js"></script>
 
-    <!-- MI ARCHIVO JS -->
-    <script src="./js/main.js"></script>
+    <script src="../js/main.js"></script>
 </body>
 </html>
-
-
-
